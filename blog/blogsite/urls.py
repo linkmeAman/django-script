@@ -1,8 +1,12 @@
 from django.urls import path
-from . import views
+from blogsite.views.views import index, individual_post, subscribe_view
+
+from . import routes
 
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('post/', views.individual_post, name='individual_post')
+    path('', index, name='index'),
+    path('post/', individual_post, name='individual_post'),
+    path('subscribe/', subscribe_view, name='subscribe'),
+    # path('', routes.urlpatterns),
 ]
